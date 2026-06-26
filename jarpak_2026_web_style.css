@@ -1,0 +1,641 @@
+:root {
+	--twc-primary-0: 223.60000000000002 84.6% 84.7%;
+    --twc-primary-0-text: 0 0% 0%;
+    --twc-primary-25: 223.60000000000002 84.6% 69.4%;
+    --twc-primary-25-text: 0 0% 0%;
+    --twc-primary-50: 223.60000000000002 88% 49%;
+    --twc-primary-50-text: 0 0% 100%;
+    --twc-primary-75: 223.60000000000002 88% 29.4%;
+    --twc-primary-75-text: 0 0% 100%;
+    --twc-primary-100: 223.79999999999995 93.4% 17.8%;
+    --twc-primary-100-text: 0 0% 100%;
+    --twc-course-0: 193 71.9% 87.5%;
+    --twc-course-1: 325.79999999999995 76.5% 83.3%;
+    --twc-course-2: 148.5 70.1% 82.9%;
+    --twc-gs-0: 0 0% 100%;
+    --twc-gs-20: 0 0% 92.2%;
+    --twc-gs-40: 0 0% 69.8%;
+    --twc-gs-60: 0 0% 46.3%;
+    --twc-gs-80: 0 0% 19.6%;
+    --twc-gs-100: 0 0% 0%;
+}
+
+/*==============================*\
+	FONT
+\*------------------------------*/
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/helvetica_neue/HelveticaNeue-Thin.otf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/helvetica_neue/HelveticaNeue-Light.otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/helvetica_neue/HelveticaNeue-Roman.otf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/helvetica_neue/HelveticaNeue-Medium.otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/helvetica_neue/HelveticaNeue-Bold.otf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/fonts/playfair_display/PlayfairDisplay-VariableFont_wght.ttf");
+    font-weight: 400 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/fonts/playfair_display/PlayfairDisplay-Italic-VariableFont_wght.ttf");
+    font-weight: 400 900;
+    font-style: italic;
+}
+
+/*==============================*\
+	GLOBAL: Body
+\*------------------------------*/
+
+body {
+    font-family: "HelveticaNeue", system-ui, -apple-system, sans-serif;
+	margin: 0;
+}
+
+.page-title {
+	text-align: center;
+	font-family: "Playfair Display", serif;
+	font-style: italic;
+	font-weight: 700;
+}
+
+p {
+	font-family: "HelveticaNeue";
+	font-weight: 300;
+}
+
+/*==============================*\
+	GLOBAL: Header
+\*------------------------------*/
+
+header {
+    position: sticky;
+	z-index: 999;
+	top: 0px;
+	padding: 0 30px;
+	background: white;
+	border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+	max-width: 1200px;
+	height: 70px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link img {
+    height: 70px;
+    width: auto;
+    display: block;
+}
+
+nav, nav ul {
+    height: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+	height: 100%;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: black;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 5px;
+	box-sizing: border-box;
+	border-bottom: 3px solid transparent; /* Garis transparan awal agar layout tidak geser */
+	transition: all 0.2s ease;
+} nav ul li a:hover {
+	border-bottom: 3px solid #0057ff;
+} nav ul li a.active {
+	color: #0057ff;
+	border-bottom: 3px solid #0057ff;
+}
+
+/*==============================*\
+	GLOBAL: Footer
+\*------------------------------*/
+
+/* Reset & Font Dasar */
+.custom-footer {
+	background-color: #121212; /* Warna gelap sesuai gambar */
+	color: #ffffff;
+	padding: 30px 0;
+	border-top: 1px solid #222222;
+}
+
+.footer-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	text-align: center;
+	gap: 20px;
+	padding: 0 20px;
+	justify-content: space-between;
+}
+
+/* Container pembungkus Judul + Ikon Sosmed */
+.social-section {
+    display: flex;
+    flex-direction: row; /* Membuat judul dan ikon tersusun atas-bawah */
+    align-items: center; /* PENTING: Memaksa semua konten di dalamnya rata kiri */
+    text-align: center; /* Memastikan teks merapat ke kiri */
+}
+
+/* Mengatur teks judul */
+.social-section h3 {
+    font-size: 14px;
+    font-weight: 300;
+	margin: 0 15px 0 0;
+    letter-spacing: 0.5px;
+}
+
+/* Container khusus ikon-ikon sosmed */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Membuat barisan lingkaran dimulai dari kiri */
+    align-items: center;
+    gap: 15px; /* Jarak antar lingkaran sosmed */
+}
+
+/* Lingkaran putih (tetap sama seperti sebelumnya) */
+.social-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Ikon hitam di dalam lingkaran */
+.social-circle i {
+    color: #000000;
+    font-size: 16px;
+}
+
+.social-circle:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.copyright {
+	font-size: 14px;
+	font-weight: 300;
+	color: white;
+	margin: 0;
+	letter-spacing: 0.5px;
+}
+
+/*==============================*\
+	HOME PAGE
+\*------------------------------*/
+
+.banner {
+    background-image: url('images/20260306_081525.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+
+.arrow-button {
+    background-color: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+	margin-bottom: -50px;
+}
+
+.arrow-button:hover {
+    background-color: #0041a3;
+}
+
+.arrow-button .material-symbols-outlined {
+    font-size: 32px;
+}
+
+
+
+.news-section-title, .about-us-title, .latest-project-title {
+	font-family: "Playfair Display", serif;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.news-section-title {
+	margin-top: 60px;
+	text-align: center;
+}
+
+/* News Section */
+.news-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+	
+	margin: 40px auto 80px auto;
+}
+
+.news-item {
+    text-decoration: none;
+    color: inherit;
+    padding: 25px;
+    border-top: 1px solid #d9d9d9;
+}
+
+.news-item:last-child {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.news-item h2 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.news-item:hover h2 {
+    color: hsl(215, 81%, 40%);
+	text-decoration: underline;
+}
+
+.news-content {
+    padding: 25px 0;
+}
+
+.news-date {
+    margin: 0 0 10px 0;
+    color: #666;
+}
+
+.news-publisher {
+    margin: 0;
+    color: #666;
+}
+
+/* Latest Project Section */
+.latest-project-title {
+		text-align: center;
+}
+
+.latest-project-container {
+	max-width: 800px;
+	margin: 0 auto 80px auto;
+}
+
+.latest-project-content {
+	display: flex;
+    gap: 50px;
+    align-items: center;
+	margin: 40px auto 0 auto;
+}
+
+.project-image img {
+    width: auto;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.latest-project-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.see-project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    background: #1e4eea;
+    color: white;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    padding: 16px 32px;
+    border-radius: 999px;
+
+    transition: 0.3s ease;
+}
+
+.see-project-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* About Us Section */
+.about-us-title {
+	text-align: left;
+}
+
+.about-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.about-content {
+	margin: 40px auto 80px auto;
+}
+
+/*==============================*\
+	ABOUT PAGE
+\*------------------------------*/
+
+.team-about-section {
+	text-align: center;
+	padding: 20px;
+}
+
+.team-member-section {
+	text-align: center;
+	padding: 20px;
+}
+
+.team-about-section-title, .team-member-section-title {
+	text-align: center;
+	font-family: "Playfair Display", serif;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.team-container {
+	max-width: 1200px;
+	margin: 40px auto;
+	text-align: center;
+}
+
+.team-row {
+	display: flex;
+	justify-content: center; /* Menengahkan posisi card */
+	flex-wrap: wrap; /* Otomatis turun ke baris baru jika layar sempit */
+	gap: 30px; /* Jarak horizontal antar card */
+	margin-bottom: 40px; /* Jarak vertikal antar baris jabatan */
+}
+
+/* Spesifik Card Dosen (Tanpa Foto) */
+.dosen-card {
+	background: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	padding: 20px 40px;
+	border-radius: 12px;
+	width: fit-content;
+	min-width: 300px;
+}
+
+/* Card Anggota (Dengan Foto Kotak Sudut Lengkung) */
+.member-card {
+	background: white;
+	padding: 20px;
+	border-radius: 12px; /* Sudut melengkung luar card */
+	width: 220px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #ddd;
+}
+
+/* Pengaturan Foto Profil Kotak Lengkung */
+.member-card img {
+	width: 100%;
+	height: 240px; /* Tinggi foto diatur seragam */
+	object-fit: cover; /* Foto tidak akan gepeng */
+	border-radius: 12px; /* Membuat sudut foto melengkung seperti di Project */
+}
+
+.member-card h3, .dosen-card h3 {
+	font-family: "HelveticaNeue", sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	margin: 8px 0;
+}
+
+.prodi {
+	font-family: "HelveticaNeue", sans-serif;
+	color: #777777;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Lencana Jabatan Anggota */
+.role-badge {
+	background-color: #f0f0f0;
+	color: #333333;
+	font-family: "HelveticaNeue", sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	padding: 4px 14px;
+	border-radius: 20px;
+	margin-bottom: 5px;
+}
+
+/* Lencana Jabatan Dosen */
+.role-badge-dosen {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: "HelveticaNeue", sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	padding: 4px 14px;
+	border-radius: 20px;
+	width: fit-content;
+	margin: 0 auto 10px auto;
+}
+
+/*==============================*\
+	PROJECT PAGE
+\*------------------------------*/
+
+.project-container {
+	display:grid;
+	grid-template-columns:repeat(2, minmax(0, 1fr));
+	gap: 40px;
+	max-width: 1200px;
+	margin: 40px auto 80px auto;
+}
+
+.card {
+	display: flex;
+	gap: 20px;
+	background: white;
+	padding: 20px;
+	border-radius: 12px;
+	border: 1px solid #ddd;
+}
+
+.card:last-child:nth-child(odd) {
+	grid-column: 1 / -1;
+	max-width:580px;
+	margin: 0 auto;
+}
+
+.card img {
+	width: 160px;
+	height: 200px;
+	object-fit: cover;
+	flex-shrink: 0;
+	
+	border-radius: 8px;
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.card-content h2 {
+	font-family: "HelveticaNeue", sans-serif;
+	font-weight: 700;
+}
+
+.card-title-link {
+	text-decoration: none;
+	color: inherit;
+} .card-title-link:hover h2 {
+	color: hsl(215, 81%, 40%);
+	text-decoration: underline;
+}
+
+.card-content p {
+	font-family: "HelveticaNeue", sans-serif;
+	font-weight: 300;
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.read-more-link {
+	color: #888888;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.3s ease;
+} .read-more-link:hover {
+	color: #000000;
+}
+
+/*==============================*\
+	PROJECT PAGE: Math Tales
+\*------------------------------*/
+.project-mathtales {
+    padding: 60px 30px;
+}
+
+.deproject-container {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+}
+
+.deproject-decs {
+    max-width: 1200px;
+    margin: 40px auto auto auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.deproject-section-title {
+	font-family: "Playfair Display", serif;
+	font-style: italic;
+	font-weight: 700;
+	text-align: left;
+}
+
+.deproject-champ-cat {
+	margin: 40px auto 80px auto;
+	text-align: center;
+}
+
+/* --- KUNCI UTAMA GRID --- */
+.deproject-gallery-grid {
+	display: grid;
+	/* Membuat 3 kolom sama rata pada desktop, dan otomatis fleksibel di mobile */
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 24px; /* Jarak antar kotak gambar */
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+/* --- KUNCI UTAMA GAMBAR --- */
+.deproject-gallery-grid img {
+	width: 100%;
+	height: auto;
+	/* Mengunci rasio kotak gambar (Landscape standar yang estetis) */
+	aspect-ratio: 4 / 3; 
+	
+	/* Trik ajaib agar gambar portrait tidak gepeng, melainkan nge-crop proporsional */
+	object-fit: cover; 
+	object-position: center; /* Fokus crop tepat di tengah gambar */
+	
+	/* Tambahan kosmetik agar layout terlihat premium */
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
